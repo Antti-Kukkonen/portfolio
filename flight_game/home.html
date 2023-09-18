@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fly 飞得更高或更低 game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Nanum+Myeongjo&display=swap"
+          rel="stylesheet">
+
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<div class="music-container">
+    <audio id="audio" loop src="effects/lentopeliloop2.mp3"></audio>
+    <button id="play" class="action-btn action-btn-big accent_1">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+</div>
+<!-- Top bar and dropdown -->
+<div class="top_bar accent_1">
+    <div class="dropdown accent_2">
+        &#8801; <!-- ≡ symbol-->
+        <span class="notification"></span>
+        <div class="dropdown-content accent_2">
+            <a href="#game" class="accent_hover">Game</a>
+            <a href="#mapcss" class="accent_hover">Map</a>
+            <a href="#themes" class="accent_hover">Themes</a><span class="notification"
+                                                                   style="top: 10.5rem"></span>
+            <a href="#leaderboard" class="accent_hover">Leaderboard</a>
+        </div>
+    </div>
+    <h1>Fly 飞得更高或更低 game</h1>
+    <div id="secret"></div>
+</div>
+<!-- GAME LAYOUT -->
+<main id="game">
+    <div class="game accent_3">
+        <div id="middlebox" class="accent_2">
+            <h2 id="midh2" class="accent_2 topic">Topic</h2>
+            <div id="pointcounter" class="accent_2">
+                <p id="scoretext">Score :</p>
+                <p id="points">0</p>
+                <p id="highscoretext">High score :</p>
+                <p id="highscore">0</p>
+            </div>
+            <a id="new_game" class="accent_1">New Game</a>
+        </div>
+        <div class="left">
+            <article>
+                <p class="accent_4" id="left-one">Country</p>
+                <p class="accent_4" id="left-two">Airport</p>
+                <p class="accent_4" id="left-three">Number</p>
+            </article>
+        </div>
+        <div class="right">
+            <article id="rightside" class="accent_4">
+                <p id="right-one">Country</p>
+                <p id="right-two">Airport</p>
+                <a class="higher_btn" id="higher_btn">Higher</a>
+                <a class="lower_btn" id="lower_btn">Lower</a>
+            </article>
+        </div>
+    </div>
+</main>
+<!-- map integration -->
+<div id="mapcss" class="accent_3">
+    <div id="map" class="accent_3">
+    </div>
+</div>
+<!-- THEME SELECTOR -->
+<section id="themes" class="accent_2">
+    <div class="themes">
+        <!-- Theme buttons get created here -->
+    </div>
+</section>
+<div id="leaderboard" class="accent_1">
+    <p class="topic accent_1" id="leaderboard_topic"></p>
+    <div id="leaderboard_top" class="accent_1 leaderboard_entry">
+        <p>Score</p>
+        <p>Name</p>
+    </div>
+</div>
+<dialog class="accent_1">
+    <h2 id="topich2" class="accent_1 topic">Topic</h2>
+    <p id="points_display" class="accent_1">Hey</p>
+    <div class="dropdown accent_1" id="topicselect">
+        <button id="topicbutton" class="accent_1">Change topic</button>
+        <div id="topiccontent" class="dropdown-content accent_2">
+            <a id="topic_1" class="accent_hover">Elevation from sea level</a>
+            <a id="topic_2" class="accent_hover">Daily flights</a>
+            <a id="topic_3" class="accent_hover">Average Google star rating</a>
+            <a id="topic_4" class="accent_hover">Amount of reviews on Google</a>
+            <a id="topic_5" class="accent_hover">Annual revenue</a>
+        </div>
+    </div>
+    <label>
+        <input id="screen_name" autocomplete="off" type="text" class="accent_2" placeholder="Enter screen name...">
+    </label>
+    <button id="start_game" class="accent_1">Start Game</button>
+</dialog>
+</body>
+</html>
