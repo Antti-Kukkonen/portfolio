@@ -22,6 +22,16 @@ This is the first group project I worked on during my studies. It is a browser b
 
 This is the second group project I worked on during my studies. It is a embedded system that monitors the heartbeat of a person. It uses a Raspberry Pi Pico and an optical sensor to measure the heartbeat. The data is displayed on an OLED screen via I2C. More details on the project can be found in the documentation in the project folder.
 
+## [Project 2: weather-app](https://github.com/Arc4517/portfolio/tree/main/react/weather-app)
+
+**Languages:** JS, CSS
+
+**Frameworks/libraries/technologies used:** MongoDB, Express, React, Node.js, OpenWeatherMap API,
+
+### Description:
+
+This is the third group project I worked on during my studies. It is a web application that displays the weather forecast for a given location. The application uses MongoDB to store user data and Express to handle the backend with JWTokens. The frontend is made with React. The weather data is fetched from the OpenWeatherMap API.
+
 ## Smaller code snippets and tidbits
 
 ### Description:
