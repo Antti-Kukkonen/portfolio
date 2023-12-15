@@ -1,0 +1,381 @@
+#WeatherBackground {
+    width: 100dvw;
+    height: 100dvh;
+    
+}
+
+#AppContainer {
+    width: 70dvw;
+    height: 65dvh;
+    position: absolute;
+    top: 49%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    margin: auto;
+}
+
+/* text overall handling */
+h3 {
+    color: whitesmoke;
+}
+
+.weather-p {
+    margin: auto;
+    margin-left: 1rem;
+    text-align: left;
+    font-size: 2rem;
+}
+
+/* UpperWeatherInfo */
+#UpperWeatherInfo {
+    display: flex;
+}
+#Star {
+    margin: auto;
+    margin-left: 1rem;
+    margin-right: 0;
+    font-size: 3rem;
+    cursor: pointer;
+}
+#Location {
+    margin: auto;
+    margin-left: 1rem;
+    font-size: 4rem;
+}
+#Refresh {
+    margin: auto;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+#RefreshTime {
+    color: whitesmoke;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+#RefreshButton {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: whitesmoke;
+    transition: color 0.3s ease;
+    &:hover {
+        color: #ffee00;
+      }
+}
+
+/* end of UpperWeatherInfo */
+
+
+/* LowerWeatherInfo */
+#LowerWeatherInfo {
+    display: grid;
+    height: 90%;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 0.7rem;
+}
+
+#TempContainer {
+    grid-row: 1 / 5;
+    grid-column: 1 / 7;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+#tempL {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+}
+#tempR {
+    text-align: center;
+    width: 70%;
+}
+#tempR #WeatherDescription{
+    font-size: 3rem;
+}
+#tempL #Temp {
+    font-size: 4rem;
+}
+#tempL #WeatherMain {
+    font-size: 3rem;
+}
+
+#Icon {
+    color: whitesmoke;
+    font-size: 18rem !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1 / 8;
+    grid-column: 7 / 11;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+#Wind {
+    grid-row: 5 / 8;
+    grid-column: 1 / 4;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+#windL {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#windR {
+    text-align: left;
+    width: 30%;
+    font-size: 3rem;
+}
+
+#Humidity {
+    grid-row: 5 / 8;
+    grid-column: 4 / 7;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+#humidityL {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#humidityR {
+    text-align: left;
+    width: 30%;
+    font-size: 3rem;
+}
+
+#FeelsLike {
+    grid-row: 8 / 11;
+    grid-column: 1 / 4;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+#feelslikeL {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#feelslikeR {
+    text-align: left;
+    width: 30%;
+    font-size: 3rem;
+}
+
+#Cloudiness {
+    grid-row: 8 / 11;
+    grid-column: 4 / 7;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+#cloudinessL {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+#cloudinessR {
+    text-align: left;
+    width: 30%;
+    font-size: 3rem;
+}
+
+#SunContainer {
+    grid-row: 8 / 11;
+    grid-column: 7 / 11;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.info-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    color: whitesmoke;
+}
+
+/* End of LowerWeatherInfo */
+
+h1.no-location {
+    color: white;
+    margin: 20px auto;
+    max-width: 90dvw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    text-align: center;
+}
+
+/* Changing color classes*/
+/* cloudy */
+.cloudy {
+    background: linear-gradient(#7a8fd8, #47329B)
+}
+.cloudyr {
+    background: linear-gradient(#47329B, #7a8fd8)
+}
+.infoBG {
+    background: linear-gradient(#664dcc, #533bb4)
+}
+
+.infoBG-rain {
+    background: linear-gradient(#434e75, #281d57)
+}
+
+
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    /* fit width height to mobile */
+    #AppContainer {
+      Width: 100dvw;
+      height: 90dvh;
+      padding-top: 50px;
+    }
+
+    /*remove refresh and star*/
+    #Refresh {
+      display: none;
+    }
+    #Star {
+      display: none;
+    }
+
+
+#Location {
+    margin-top: 4px;
+    font-size: 3rem;
+    max-height: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    /* Grid control of Lower*/
+    #LowerWeatherInfo {
+        display: grid;
+        height: 75%;
+        grid-template-rows: repeat(40, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 0.5rem !important;
+        padding: 0;
+
+    }
+    .weather-p {
+        font-size: 1.5rem;
+    }
+    .weather-p.info-icon {
+        font-size: 3rem !important;
+    }
+    #TempContainer {
+        grid-row: 1 / 13;
+        grid-column: 1 / 6;
+        margin-left: 10%;
+        height: 90%;
+    }
+    #Temp.weather-p {
+        margin: 0;
+        text-align: center;
+        padding-bottom: 0.5rem;
+    }
+    #tempL #Temp {
+        font-size: 2.5rem;
+    }
+    #tempL {
+        width: 90%;
+        margin: auto;
+    }
+    #WeatherMain.weather-p{
+        margin: 0;
+        text-align: center;
+    }
+    #tempR {
+        display: none;
+    }
+    #tempL #WeatherMain {
+        font-size: 1.5rem;
+    }
+    #Icon {
+        font-size: 8rem !important;
+        text-align: center;
+        grid-row: 1 / 13;
+        grid-column: 6 / 11;
+    }
+    #Wind {
+        grid-row: 13 / 23;
+        grid-column: 1 / 6;
+    }
+    #Humidity {
+        grid-row: 13 / 23;
+        grid-column: 6 / 11;
+    }
+    #FeelsLike {
+        grid-row: 23 / 33;
+        grid-column: 1 / 6;
+    }
+    #Cloudiness {
+        grid-row: 23 / 33;
+        grid-column: 6 / 11;
+    }
+    #SunContainer {
+        grid-row: 37 / 41;
+        grid-column: 1 / 11;
+    }
+    /* Remove changing class from LowerWeatherInfo to suit mobile */
+    .cloudy {
+        background: transparent;
+    }
+  }

@@ -1,0 +1,39 @@
+
+
+div.sun {
+    margin: 20px;
+    min-width: 280px;
+    height: 126px;
+    background: linear-gradient(#664dcc, #533bb4);
+    color: white;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+div.sun p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: auto;
+}
+
+.sun-items:nth-child(1) {
+    width: 15%;
+}
+
+.sun-items:nth-child(2) {
+    width: 60%;
+}
+
+.sun-items:nth-child(3) {
+    width: 15%;
+}
+
+.sun-items:nth-child(4) {
+    align-self: flex-end;
+    width: 100%;
+}

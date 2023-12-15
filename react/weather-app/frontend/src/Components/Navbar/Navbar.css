@@ -1,0 +1,122 @@
+/* Navbar.css */
+
+.navBar {
+  background-color: #3C4061;
+  height: 75px; 
+  width: calc(100vw - 20px); 
+  display: flex;
+  align-items: center;
+  padding: 0 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  z-index: 1001;
+  position: fixed;
+}
+  
+  .drop-menu {
+    color: white;
+    font-size: 24px;
+
+    margin-right: 20px; 
+    margin-bottom: 36px;
+  }
+
+  .logo-link {
+    margin-left: 40px;
+    margin-right: 6px;
+    text-decoration: none;
+    font-size: .6em;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #FFA500;
+    }
+  }
+  
+
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+    position: relative; 
+
+  }
+  
+  .search-bar input[type='text'] {
+    padding: 5px;
+    border: 1px solid #2f324b; 
+    background-color: #585B75;
+    color: whitesmoke;
+    transition: border-color 0.3s ease;
+  }
+  
+  input::placeholder{
+    color: white;
+  }
+  
+  .search-bar input[type='text']:focus {
+    outline: none;
+    border: 1px solid #21243b; 
+    border-radius: 4px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+
+  }
+
+  .search-icon {
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #FFA500;
+    }
+  }
+
+  .search-button {
+    background: none;
+    border: none;
+    margin: auto;
+  }
+  
+  .search-bar input[type=text].search-error {
+    border: 1px solid rgb(253, 110, 110);
+  }
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .navBar {
+    width: 100vw;
+    background-color: #3C4061;
+    height: 50px;
+    padding: 0;
+  }
+  .navBar .search-bar {
+    margin-right: 15px; 
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-bar input[type='text'] {
+    padding: 2px; 
+    font-size: 9px; 
+  }
+
+  .search-button {
+    margin: auto;
+  }
+
+  .logo-link {
+    font-size: 14px;
+  }
+}
