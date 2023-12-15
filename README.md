@@ -22,7 +22,7 @@ This is the first group project I worked on during my studies. It is a browser b
 
 This is the second group project I worked on during my studies. It is a embedded system that monitors the heartbeat of a person. It uses a Raspberry Pi Pico and an optical sensor to measure the heartbeat. The data is displayed on an OLED screen via I2C. More details on the project can be found in the documentation in the project folder.
 
-## [Project 2: weather-app](https://github.com/Arc4517/portfolio/tree/main/react/weather-app)
+## [Project 3: weather-app](https://github.com/Arc4517/portfolio/tree/main/react/weather-app)
 
 **Languages:** JS, CSS
 
