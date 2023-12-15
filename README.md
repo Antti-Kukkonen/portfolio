@@ -26,7 +26,7 @@ This is the second group project I worked on during my studies. It is a embedded
 
 **Languages:** JS, CSS
 
-**Frameworks/libraries/technologies used:** MongoDB, Express, React, Node.js, OpenWeatherMap API,
+**Frameworks/libraries/technologies used:** MongoDB, Express, React, Node.js, OpenWeatherMap API
 
 ### Description:
 
