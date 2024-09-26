@@ -1,0 +1,24 @@
+Label {
+    -fx-font-weight: bold;
+    -fx-min-width: 150px;
+    -fx-padding: 0 0 0 4px;
+}
+
+TextField {
+    -fx-font-weight: bold;
+    -fx-min-width: 150px;
+}
+
+Button {
+    -fx-font-weight: bold;
+    -fx-min-width: 150px;
+}
+
+.notice-root {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+
+.notice-button {
+    -fx-min-width: 64px;
+}
