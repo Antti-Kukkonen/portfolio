@@ -32,11 +32,25 @@ This is the second group project I worked on during my studies. It is a embedded
 
 This is the third group project I worked on during my studies. It is a web application that displays the weather forecast for a given location. The application uses MongoDB to store user data and Express to handle the backend with JWTokens. The frontend is made with React. The weather data is fetched from the OpenWeatherMap API.
 
+## [Project 4: language-learning-app](https://github.com/Arc4517/portfolio/tree/main/react/language-learning-app)
+
+**Languages:** JS, CSS
+
+**Frameworks/libraries/technologies used:** MongoDB, Express, React, Node.js
+
+### Description:
+
+My final group project which I worked on during my studies. Another React application with a MongoDB database and Express backend. The app is a language learning application for Japanese. It has a dictionary, flashcards and a quiz. The app features localization and user authentication.
+
 ## Smaller code snippets and tidbits
 
 ### Description:
 
 These are smaller projects and bits of code that demonstrate my coding style and the technologies I've worked with.
+
+**[Java CRUD application](https://github.com/Arc4517/portfolio/tree/main/Java-CRUD)** - A simple interface for MongoDB with CRUD operations made with JavaFX.
+**[Design patterns](https://github.com/Arc4517/portfolio/tree/main/design-patterns)** - A collection of design patterns implemented in Java.
+**[ParliamentApp](https://github.com/Arc4517/portfolio/tree/main/ParliamentApp)** - An android application that fetches images from an API and displays basic information about the Finnish parliament members.
 
 ### node.js server examples: Custom API backends made with Express
 
