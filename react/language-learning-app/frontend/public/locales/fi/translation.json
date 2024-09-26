@@ -1,0 +1,191 @@
+{
+    "navbar": {
+        "subtitle": "Japanin kielen oppimissovellus",
+        "profile": "Profiili",
+        "logout": "Kirjaudu ulos",
+        "login": "Kirjaudu sisään",
+        "signup": "Rekisteröidy"
+    },
+    "landingpage": {
+        "lessons": "Oppitunnit",
+        "flashcards": "Muistikortit",
+        "quizzes": "Tietovisat",
+        "dictionary": "Sanakirja"
+    },
+    "dictionary": {
+        "title": "Sanakirja",
+        "searchplaceholder": "Etsi..."
+    },
+    "dictionaryitem": {
+        "meaning": "Merkitys",
+        "audiobutton": "Kuuntele ääntäminen"
+    },
+    "flashcardlist": {
+        "nextcard": "Seuraava kortti",
+        "switchlanguage": "Vaihda kieltä",
+        "audiobutton": "Kuuntele ääntäminen"
+    },
+    "login": {
+        "login": "Kirjaudu sisään",
+        "email": "Sähköposti:",
+        "password": "Salasana:"
+    },
+    "signup": {
+        "signup": "Rekisteröidy",
+        "email": "Sähköposti:",
+        "password": "Salasana:"
+    },
+    "profilepage": {
+        "loading": "Ladataan...",
+        "error": "Virhe: ",
+        "profile-page": "Profiilisivu",
+        "quiz-scores": "Tietovisa tulokset",
+        "quiz": "Tietovisa:",
+        "score": "Tulos:",
+        "date": "Päivämäärä:",
+        "no-completed-quizzes": "Et ole vielä suorittanut yhtään tietovisaa.",
+        "completed-lessons": "Suoritetut oppitunnit",
+        "lesson": "Oppitunti:",
+        "opened": "Avattu:",
+        "no-completed-lessons": "Et ole vielä suorittanut yhtään oppituntia."
+    },
+    "quizcontainer": {
+        "startquiz": "Aloita Tietovisa",
+        "nextquestion": "Seuraava Kysymys",
+        "quizcompleted": "Tietovisa suoritettu!",
+        "quizcompleted-msg-1": "Vastasit oikein ",
+        "quizcompleted-msg-2": "kysymykseen ensimmäisellä yrityksellä ",
+        "quizcompleted-msg-3": " kysymyksestä.",
+        "restartquiz": "Aloita tietovisa uudelleen"
+    },
+    "quiz": {
+        "score": "Sait %a maksimipistemäärästä: %b!",
+        "question": "Question "
+    },
+    "lesson": {
+        "back": "Takaisin oppitunneille...",
+        "next": "Seuraava",
+        "content": {
+            "zero": {
+                "title": "Intro - Japanin kieli",
+                "c1": "Japanin kieli koostuu kolmesta eri kirjoitusasusta Kanji, Hiragana ja Katakana, mutta Hiragana ja Katakana ovat hyvin samankaltaisia. Japanin kirjoitusasussa käytetään vähemmän välimerkkejä kuin useimmissa kielissä. Japania kirjoitetaan yleensä ilman välilyöntejä sanojen välissä, eikä kysymysmerkkiä käytetä virallisessa tai perinteisessä japanilaisessa kirjoituksessa. Japanin kielessä on oma versionsa pisteestä (。) ja pilkusta (、), joita käytetään samalla tavalla englannissa, vaikka piste jätetään usein pois, kun lause on yksinään.",
+                "h2": "Kana",
+                "c2": "Kana koostuu kahdesta tavusta: Hiragana ja Katakana. Merkit koostuvat konsonantti-vokaali-silpuista lukuun ottamatta merkkiä \"n\" ja vokaaleja \"a\", \"i\", \"u\", \"e\" ja \"o\". Hiraganaa ja katakanaa käytetään samojen äänteiden kirjoittamiseen, mutta niitä käytetään eri yhteyksissä.",
+                "h3": "Hiragana",
+                "c3": "Hiraganaa käytetään lähinnä kieliopillisten osien, kuten partikkelien ja postpositioiden, kirjoittamiseen. Näiden englanninkieliset vastineet ovat sanoja kuten \"with\", \"from\". \"to\" jne. Hiraganan toinen kieliopillinen käyttötarkoitus on verbien ja adjektiivien päätteiden kirjoittaminen. Hiraganaa käytetään joskus myös sanojen kirjoittamiseen, kun kanji on epäselvä tai vaikeasti luettava. Hiraganaa käytetään myös Furiganana Kanjin lukemisen apuvälineenä, jolloin Hiragana kirjoitetaan Kanjin yläpuolelle tai viereen Kanjin lukemisen helpottamiseksi. Tätä käytetään usein lastenkirjoissa, japania opetteleville tarkoitetuissa kirjoissa tai epäselvissä ja harvoin käytetyissä kanjeissa.",
+                "h4": "Katakana",
+                "c4": "Katakanaa käytetään ensisijaisesti vierasperäisten sanojen ja nimien transliteraatioon, kuten \"コーヒー\" (kōhī) sanalle \"kahvi\", sekä onomatopoieaan. (Kōhī:n o- ja i-kirjainten yliviivat tarkoittavat pitkiä vokaaleja). Katakanaa voidaan käyttää korostamiseen, kuten englannissa käytetään kursiivia. Katakanaa käytetään myös kasvien ja eläinten tieteellisten nimien kirjoittamiseen sekä sellaisten kasvien ja eläinten nimien kirjoittamiseen, jotka eivät ole kotoisin Japanista.",
+                "h5": "Kanji",
+                "c5": "Kanji muodostaa suurimman osan japanin kirjoitusjärjestelmästä. Kanjit ovat logografisia merkkejä, mikä tarkoittaa, että jokainen merkki edustaa sanaa tai morfeemia. Esim. 私, watashi; I, minä. Tai 犬, inu; koira. Kanjia käytetään useimpien substantiivien, verbien, adjektiivien ja adverbien kantojen sekä henkilö- ja paikannimien kirjoittamiseen. Useimmilla kanjeilla on useita lukutapoja, ja kanjin lukutapa voi muuttua asiayhteydestä riippuen. Kanjin lukutavat voidaan jakaa kahteen luokkaan: On'yomi ja Kun'yomi. On'yomit ovat kiinasta lainattuja lukutapoja, ja Kun'yomit ovat Japanin alkuperäisiä lukutapoja.",
+                "h6": "Rōmaji",
+                "c6": "Rōmaji on japanin kielen latinalaistaminen, mikä tarkoittaa japanilaisen kirjoitusasun muuttamista latinalaisiksi aakkosiksi. Rōmajia käytetään japanin kielen opettamiseen muille kuin äidinkielenään puhuville ja japanin kielen syöttämiseen tietokoneisiin ja joskus puhelimiin (tähän on olemassa myös muita tapoja). Rōmaji erottuu japaninkielisen tekstin keskellä, joten sitä käytetään yleisesti yritysten tuotemerkeissä ja mainoksissa, joissa Rōmajin käyttö saa tuotemerkin tai tuotteen näyttämään modernimmalta ja kansainvälisemmältä. Rōmajia käytetään myös latinalaisin aakkosin kirjoitetuissa lyhenteissä ja yhdessä katakanan kanssa joissakin vierasperäisissä sanoissa, kuten T-paita, T シャツ, tīshatsu."
+            },
+            "one": {
+                "title": "Kana",
+                "c1-1": "Aakkoset ovat joukko kirjaimia tai symboleja, jotka edustavat tiettyjä äänteitä tai foneemeja. Kana-kirjoitukset ovat sen sijaan tavukirjoituksia, joissa jokainen merkki edustaa tavua. Kana-kirjoitukset ovat Hiragana ja Katakana. Molemmat kana-kirjoitusmerkit ovat peräisin kanjista, ja vanha japani kirjoitettiin itse asiassa kokonaan näillä merkeillä.",
+                "f1": "Kana kehitys kaavio osoitteesta ",
+                "c1-2": "Hiraganaa käytetään japaninkielisiin sanoihin ja kieliopillisiin elementteihin. Katakanaa käytetään vierasperäisiin lainasanoihin, onomatopoeettisiin sanoihin ja painotuksiin. Molemmissa kirjoitusmerkeissä on 46 merkkiä, ja ne ovat foneettisesti identtisiä. Ainoa ero on niiden kirjoitustapa.",
+                "h2": "Diakriittiset merkit",
+                "h3": "Digrafiat"
+            },
+            "two": {
+                "title": "Kanji"
+            },
+            "three": {
+                "title": "Numerot ja laskeminen"
+            },
+            "four": {
+                "title": "Partikkelit"
+            },
+            "five": {
+                "title": "Verbit"
+            },
+            "six": {
+                "title": "Adjektiivit"
+            }
+        }
+    },
+    "words":{
+        "one": "yksi",
+        "two": "kaksi",
+        "three": "kolme",
+        "four": "neljä",
+        "five": "viisi",
+        "six": "kuusi",
+        "seven": "seitsemän",
+        "eight": "kahdeksan",
+        "nine": "yhdeksän",
+        "ten": "kymmenen",
+        "hundred": "sata",
+        "thousand": "tuhatta",
+        "top, above": "ylös, yläpuolella",
+        "bottom, below": "alas, alapuolella",
+        "left": "vasen",
+        "right": "oikea",
+        "inside, middle": "sisällä, keskellä",
+        "large": "iso",
+        "small": "pieni",
+        "month, moon": "kuukausi, kuu",
+        "day, sun": "päivä, aurinko",
+        "year": "vuosi",
+        "early": "aikainen",
+        "tree": "puu",
+        "woods": "metsä",
+        "mountain": "vuori",
+        "river": "joki",
+        "soil": "maa",
+        "sky": "taivas",
+        "rice field": "riisipelto",
+        "heaven, sky": "taivas",
+        "living, birth, raw": "elossa, syntymä, raaka",
+        "flower": "kukka",
+        "grass": "ruoho",
+        "insect": "hyönteinen",
+        "dog": "koira",
+        "person": "henkilö",
+        "name": "nimi",
+        "female": "nainen",
+        "male": "mies",
+        "child": "lapsi",
+        "eye": "silmä",
+        "ear": "korva",
+        "mouth": "suu",
+        "hand": "käsi",
+        "foot, suffice": "jalka",
+        "see": "nähdä",
+        "sound": "ääni",
+        "power": "voima",
+        "spirit, air": "henki, ilma",
+        "yen, circle": "jeni, ympyrä",
+        "enter": "sisään",
+        "exit": "ulos",
+        "stand up": "seiso",
+        "rest": "lepo",
+        "previous": "edellinen",
+        "evening": "ilta",
+        "book": "kirja",
+        "text": "teksti",
+        "character": "merkki",
+        "study": "opiskella",
+        "school": "koulu",
+        "village": "kylä",
+        "town": "kaupunki",
+        "forest": "metsä",
+        "correct": "oikein",
+        "water": "vesi",
+        "fire": "tuli",
+        "jewel, ball": "jalokivi, pallo",
+        "king": "kuningas",
+        "stone": "kivi",
+        "bamboo": "bambu",
+        "thread": "lanka",
+        "shellfish": "simpukka",
+        "vehicle": "ajoneuvo",
+        "gold, money": "kulta, raha",
+        "rain": "sade",
+        "red": "punainen",
+        "blue": "sininen",
+        "white": "valkoinen"
+    }
+    
+}

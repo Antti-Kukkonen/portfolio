@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  client:
+    build: ./language-learning-app
+    container_name: languageapp_c
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./language-learning-app:/app
+      - /app/node_modules
+    #allows container to run in detached mode
+    stdin_open: true
+    tty: true
+  server:
+    build: ./backend
+    container_name: serverapp_c
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules

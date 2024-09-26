@@ -1,0 +1,191 @@
+{
+    "navbar": {
+        "subtitle": "Japanska språkinlärningsapp",
+        "profile": "Profil",
+        "logout": "Logga ut",
+        "login": "Logga in",
+        "signup": "Registrera"
+    },
+    "landingpage": {
+        "lessons": "Lektioner",
+        "flashcards": "Minneskort",
+        "quizzes": "Frågesporter",
+        "dictionary": "Ordbok"
+    },
+    "dictionary": {
+        "title": "Ordbok",
+        "searchplaceholder": "Sök..."
+    },
+    "dictionaryitem": {
+        "meaning": "Betydelse",
+        "audiobutton": "Lyssna på uttalet"
+    },
+    "flashcardlist": {
+        "nextcard": "Nästa kort",
+        "switchlanguage": "Byta språk",
+        "audiobutton": "Lyssna på uttalet"
+    },
+    "login": {
+        "login": "Logga in",
+        "email": "E-post:",
+        "password": "Lösenord:"
+    },
+    "signup": {
+        "signup": "Registrera",
+        "email": "E-post:",
+        "password": "Lösenord:"
+    },
+    "profilepage": {
+        "loading": "Lastning...",
+        "error": "Fel: ",
+        "profile-page": "Profilsida",
+        "quiz-scores": "Resultat av frågesport",
+        "quiz": "Frågesport:",
+        "score": "Resultat:",
+        "date": "Datum:",
+        "no-completed-quizzes": "Du har inte slutfört några frågesporter ännu.",
+        "completed-lessons": "Avslutade lektioner",
+        "lesson": "Lärdom:",
+        "opened": "Öppnad:",
+        "no-completed-lessons": "Du har inte slutfört några lektioner ännu."
+    },
+    "quizcontainer": {
+        "startquiz": "Starta frågesporten",
+        "nextquestion": "Nästa fråga",
+        "quizcompleted": "Frågesport avklarat!",
+        "quizcompleted-msg-1": "Du svarade rätt ",
+        "quizcompleted-msg-2": "på frågan vid första försöket ",
+        "quizcompleted-msg-3": " om frågan.",
+        "restartquiz": "Starta frågesporten igen"
+    },
+    "quiz": {
+        "score": "Du fick %a av %b poäng!",
+        "question": "Fråga "
+    },
+    "lesson": {
+        "back": "Tillbaka till lektionerna...",
+        "next": "Nästa",
+        "content": {
+            "zero": {
+                "title": "Intro - Det japanska språket",
+                "c1": "Det japanska språket består av 3 olika skriftsystem Kanji, Hiragana och Katakana, men Hiragana och Katakana är mycket lika. Japansk skrift använder mindre skiljetecken än de flesta språk. Japanska skrivs normalt utan mellanslag mellan orden, och frågetecknet används inte i formell eller traditionell japansk skrift. Det japanska språket har sin egen version av punkt (。) och kommatecken (、), som används på liknande sätt på engelska, även om punkt ofta utelämnas när en mening står ensam.",
+                "h2": "Kana",
+                "c2": "Kana består av de två stavelserna: Hiragana och Katakana. Tecknen består av konsonant-vokal-stavelser, med undantag för tecknet \"n\" och vokalerna \"a\", \"i\", \"u\", \"e\" och \"o\". Både Hiragana och Katakana används för att skriva samma ljud, men de används i olika sammanhang.",
+                "h3": "Hiragana",
+                "c3": "Hiragana används mest för att skriva grammatiska komponenter, som partiklar och postpositioner. Den engelska motsvarigheten till dessa är ord som \"with\", \"from\" \"till\" etc. En annan grammatisk användning av Hiragana är för verb- och adjektivändelser. Hiragana används också ibland för att skriva ord när Kanji är otydligt eller svårt att läsa. Hiragana används också som Furigana som läshjälp för Kanji, där Hiragana skrivs ovanför eller bredvid Kanji för att hjälpa till med läsningen av Kanji. Detta används ofta i barnböcker, böcker för personer som lär sig japanska, eller för obskyra och ovanliga Kanji.",
+                "h4": "Katakana",
+                "c4": "Katakana används främst för translitterering av främmande ord och namn, till exempel \"コーヒー\" (kōhī) för \"kaffe\", och för onomatopoeia. (Överstrecken i o och i i kōhī indikerar långa vokaler). Katakana kan användas för att betona, på samma sätt som vi använder kursiv stil på engelska. Katakana används också för att skriva vetenskapliga namn på växter och djur, och för att skriva namnen på växter och djur som inte hör hemma i Japan.",
+                "h5": "Kanji",
+                "c5": "Kanji utgör den största delen av det japanska skriftsystemet. Kanji är logografiska tecken, vilket innebär att varje tecken representerar ett ord eller ett morfem. T.ex. 私, watashi; jag, mig. Eller 犬, inu; hund. Kanji används för att skriva de flesta substantiv, verb-, adjektiv- och adverbstammar samt person- och ortnamn. De flesta Kanji har flera läsningar, och läsningen av en Kanji kan ändras beroende på sammanhanget. Läsningarna av Kanji kan delas in i två kategorier: On'yomi och Kun'yomi. On'yomi är de läsningar som lånats från Kina, och Kun'yomi är de läsningar som hör hemma i Japan.",
+                "h6": "Rōmaji",
+                "c6": "Rōmaji är romaniseringen av det japanska språket, vilket innebär omvandlingen av den japanska skriften till det latinska alfabetet. Rōmaji används för att lära ut japanska till icke-modersmålstalare och för att mata in japanska i datorer och ibland telefoner (det finns andra sätt att göra detta också). Rōmaji i mitten av japansk text sticker ut, så det används ofta i företags varumärken och reklamfilmer, där användningen av Rōmaji används för att få varumärket eller produkten att verka mer modern och internationell. Rōmaji används också för latinska akronymer och tillsammans med Katakana för vissa främmande ord, till exempel T-shirt, T シャツ, tīshatsu."
+            },
+            "one": {
+                "title": "Kana",
+                "c1-1": "Ett alfabet är en uppsättning bokstäver eller symboler som representerar vissa ljud eller fonem. Kana-skrifterna är istället syllabarier, där varje tecken representerar en stavelse. Kana-skrifterna är Hiragana och Katakana. Båda Kana-skrifterna har sitt ursprung i Kanji, och gammal japanska skrevs faktiskt helt och hållet med dessa tecken.",
+                "f1": "Diagram över utvecklingen av Kana från ",
+                "c1-2": "Hiragana används för inhemska japanska ord och grammatiska element. Katakana används för utländska låneord, onomatopoeia och betoning. Båda skripten har 46 tecken och är fonetiskt identiska. Den enda skillnaden är hur de skrivs.",
+                "h2": "Diakritiska tecken",
+                "h3": "Digrafer"
+            },
+            "two": {
+                "title": "Kanji"
+            },
+            "three": {
+                "title": "Siffror och räkning"
+            },
+            "four": {
+                "title": "Partikel"
+            },
+            "five": {
+                "title": "Verb"
+            },
+            "six": {
+                "title": "Adjektiv"
+            }
+        }
+    },
+    "words":{
+        "one": "en",
+        "two": "två",
+        "three": "tre",
+        "four": "fyra",
+        "five": "fem",
+        "six": "sex",
+        "seven": "sju",
+        "eight": "åtta",
+        "nine": "nio",
+        "ten": "tio",
+        "hundred": "hundra",
+        "thousand": "tusen",
+        "top, above": "topp, ovan",
+        "bottom, below": "botten, nedan",
+        "left": "vänster",
+        "right": "höger",
+        "inside, middle": "inne, mitten",
+        "large": "stor",
+        "small": "liten",
+        "month, moon": "månad, måne",
+        "day, sun": "dag, sol",
+        "year": "år",
+        "early": "tidig",
+        "tree": "träd",
+        "woods": "skog",
+        "mountain": "berg",
+        "river": "flod",
+        "soil": "jord",
+        "sky": "himmel",
+        "rice field": "risfält",
+        "heaven, sky": "himlen",
+        "living, birth, raw": "levande, födelse, rå",
+        "flower": "blomma",
+        "grass": "gräs",
+        "insect": "insekt",
+        "dog": "hund",
+        "person": "person",
+        "name": "namn",
+        "female": "kvinnlig",
+        "male": "manlig",
+        "child": "barn",
+        "eye": "öga",
+        "ear": "öra",
+        "mouth": "mun",
+        "hand": "hand",
+        "foot, suffice": "fot",
+        "see": "se",
+        "sound": "ljud",
+        "power": "kraft",
+        "spirit, air": "ande, luft",
+        "yen, circle": "yen, cirkel",
+        "enter": "gå in",
+        "exit": "gå ut",
+        "stand up": "stå upp",
+        "rest": "vila",
+        "previous": "föregående",
+        "evening": "kväll",
+        "book": "bok",
+        "text": "text",
+        "character": "tecken",
+        "study": "studera",
+        "school": "skola",
+        "village": "by",
+        "town": "stad",
+        "forest": "skog",
+        "correct": "korrekt",
+        "water": "vatten",
+        "fire": "eld",
+        "jewel, ball": "juvel, boll",
+        "king": "kung",
+        "stone": "sten",
+        "bamboo": "bambu",
+        "thread": "tråd",
+        "shellfish": "skaldjur",
+        "vehicle": "fordon",
+        "gold, money": "guld, pengar",
+        "rain": "regn",
+        "red": "röd",
+        "blue": "blå",
+        "white": "vit"
+    }
+    
+}
