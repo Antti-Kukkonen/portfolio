@@ -1,0 +1,736 @@
+
+<html>
+    <head>
+        <title>Mocha</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+        @charset "utf-8";
+
+:root {
+  --mocha-color: #000;
+  --mocha-bg-color: #fff;
+  --mocha-pass-icon-color: #00d6b2;
+  --mocha-pass-color: #fff;
+  --mocha-pass-shadow-color: rgba(0,0,0,.2);
+  --mocha-pass-mediump-color: #c09853;
+  --mocha-pass-slow-color: #b94a48;
+  --mocha-test-pending-color: #0b97c4;
+  --mocha-test-pending-icon-color: #0b97c4;
+  --mocha-test-fail-color: #c00;
+  --mocha-test-fail-icon-color: #c00;
+  --mocha-test-fail-pre-color: #000;
+  --mocha-test-fail-pre-error-color: #c00;
+  --mocha-test-html-error-color: #000;
+  --mocha-box-shadow-color: #eee;
+  --mocha-box-bottom-color: #ddd;
+  --mocha-test-replay-color: #000;
+  --mocha-test-replay-bg-color: #eee;
+  --mocha-stats-color: #888;
+  --mocha-stats-em-color: #000;
+  --mocha-stats-hover-color: #eee;
+  --mocha-error-color: #c00;
+
+  --mocha-code-comment:  #ddd;
+  --mocha-code-init: #2f6fad;
+  --mocha-code-string: #5890ad;
+  --mocha-code-keyword: #8a6343;
+  --mocha-code-number: #2f6fad;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+     --mocha-color: #fff;
+     --mocha-bg-color: #222;
+     --mocha-pass-icon-color: #00d6b2;
+     --mocha-pass-color: #222;
+     --mocha-pass-shadow-color: rgba(255,255,255,.2);
+     --mocha-pass-mediump-color: #f1be67;
+     --mocha-pass-slow-color: #f49896;
+     --mocha-test-pending-color: #0b97c4;
+     --mocha-test-pending-icon-color: #0b97c4;
+     --mocha-test-fail-color: #f44;
+     --mocha-test-fail-icon-color: #f44;
+     --mocha-test-fail-pre-color: #fff;
+     --mocha-test-fail-pre-error-color: #f44;
+     --mocha-test-html-error-color: #fff;
+     --mocha-box-shadow-color: #444;
+     --mocha-box-bottom-color: #555;
+     --mocha-test-replay-color: #fff;
+     --mocha-test-replay-bg-color: #444;
+     --mocha-stats-color: #aaa;
+     --mocha-stats-em-color: #fff;
+     --mocha-stats-hover-color: #444;
+     --mocha-error-color: #f44;
+
+     --mocha-code-comment: #ddd;
+     --mocha-code-init: #9cc7f1;
+     --mocha-code-string: #80d4ff;
+     --mocha-code-keyword: #e3a470;
+     --mocha-code-number: #4ca7ff;
+  }
+}
+
+body {
+  margin:0;
+  background-color: var(--mocha-bg-color);
+  color: var(--mocha-color);
+}
+
+#mocha {
+  font: 20px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 60px 50px;
+}
+
+#mocha ul,
+#mocha li {
+  margin: 0;
+  padding: 0;
+}
+
+#mocha ul {
+  list-style: none;
+}
+
+#mocha h1,
+#mocha h2 {
+  margin: 0;
+}
+
+#mocha h1 {
+  margin-top: 15px;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+#mocha h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#mocha h1 a:hover {
+  text-decoration: underline;
+}
+
+#mocha .suite .suite h1 {
+  margin-top: 0;
+  font-size: .8em;
+}
+
+#mocha .hidden {
+  display: none;
+}
+
+#mocha h2 {
+  font-size: 12px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+#mocha .suite {
+  margin-left: 15px;
+}
+
+#mocha .test {
+  margin-left: 15px;
+  overflow: hidden;
+}
+
+#mocha .test.pending:hover h2::after {
+  content: '(pending)';
+  font-family: arial, sans-serif;
+}
+
+#mocha .test.pass.medium .duration {
+  background: var(--mocha-pass-mediump-color);
+}
+
+#mocha .test.pass.slow .duration {
+  background: var(--mocha-pass-slow-color);
+}
+
+#mocha .test.pass::before {
+  content: '✓';
+  font-size: 12px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  color: var(--mocha-pass-icon-color);
+}
+
+#mocha .test.pass .duration {
+  font-size: 9px;
+  margin-left: 5px;
+  padding: 2px 5px;
+  color: var(--mocha-pass-color);
+  -webkit-box-shadow: inset 0 1px 1px var(--mocha-pass-shadow-color);
+  -moz-box-shadow: inset 0 1px 1px var(--mocha-pass-shadow-color);
+  box-shadow: inset 0 1px 1px var(--mocha-pass-shadow-color);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#mocha .test.pass.fast .duration {
+  display: none;
+}
+
+#mocha .test.pending {
+  color: var(--mocha-test-pending-color);
+}
+
+#mocha .test.pending::before {
+  content: '◦';
+  color: var(--mocha-test-pending-icon-color);
+}
+
+#mocha .test.fail {
+  color: var(--mocha-test-fail-color);
+}
+
+#mocha .test.fail pre {
+  color: var(--mocha-test-fail-pre-color);
+}
+
+#mocha .test.fail::before {
+  content: '✖';
+  font-size: 12px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  color: var(--mocha-test-fail-icon-color);
+}
+
+#mocha .test pre.error {
+  color: var(--mocha-test-fail-pre-error-color);
+  max-height: 300px;
+  overflow: auto;
+}
+
+#mocha .test .html-error {
+  overflow: auto;
+  color: var(--mocha-test-html-error-color);
+  display: block;
+  float: left;
+  clear: left;
+  font: 12px/1.5 monaco, monospace;
+  margin: 5px;
+  padding: 15px;
+  border: 1px solid var(--mocha-box-shadow-color);
+  max-width: 85%; /*(1)*/
+  max-width: -webkit-calc(100% - 42px);
+  max-width: -moz-calc(100% - 42px);
+  max-width: calc(100% - 42px); /*(2)*/
+  max-height: 300px;
+  word-wrap: break-word;
+  border-bottom-color: var(--mocha-box-bottom-color);
+  -webkit-box-shadow: 0 1px 3px var(--mocha-box-shadow-color);
+  -moz-box-shadow: 0 1px 3px var(--mocha-box-shadow-color);
+  box-shadow: 0 1px 3px var(--mocha-box-shadow-color);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#mocha .test .html-error pre.error {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 18px;
+  max-height: none;
+}
+
+/**
+ * (1): approximate for browsers not supporting calc
+ * (2): 42 = 2*15 + 2*10 + 2*1 (padding + margin + border)
+ *      ^^ seriously
+ */
+#mocha .test pre {
+  display: block;
+  float: left;
+  clear: left;
+  font: 12px/1.5 monaco, monospace;
+  margin: 5px;
+  padding: 15px;
+  border: 1px solid var(--mocha-box-shadow-color);
+  max-width: 85%; /*(1)*/
+  max-width: -webkit-calc(100% - 42px);
+  max-width: -moz-calc(100% - 42px);
+  max-width: calc(100% - 42px); /*(2)*/
+  word-wrap: break-word;
+  border-bottom-color: var(--mocha-box-bottom-color);
+  -webkit-box-shadow: 0 1px 3px var(--mocha-box-shadow-color);
+  -moz-box-shadow: 0 1px 3px var(--mocha-box-shadow-color);
+  box-shadow: 0 1px 3px var(--mocha-box-shadow-color);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#mocha .test h2 {
+  position: relative;
+}
+
+#mocha .test a.replay {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  text-decoration: none;
+  vertical-align: middle;
+  display: block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  background: var(--mocha-test-replay-bg-color);
+  font-size: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-transition:opacity 200ms;
+  -moz-transition:opacity 200ms;
+  -o-transition:opacity 200ms;
+  transition: opacity 200ms;
+  opacity: 0.7;
+  color: var(--mocha-test-replay-color);
+}
+
+#mocha .test:hover a.replay {
+  box-shadow: 0 0 1px inset var(--mocha-test-replay-color);
+  opacity: 1;
+}
+
+#mocha-report.pass .test.fail {
+  display: none;
+}
+
+#mocha-report.fail .test.pass {
+  display: none;
+}
+
+#mocha-report.pending .test.pass,
+#mocha-report.pending .test.fail {
+  display: none;
+}
+#mocha-report.pending .test.pass.pending {
+  display: block;
+}
+
+#mocha-error {
+  color: var(--mocha-error-color);
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+#mocha-stats {
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  font-size: 12px;
+  margin: 0;
+  color: var(--mocha-stats-color);
+  z-index: 1;
+}
+
+#mocha-stats .progress {
+  float: right;
+  padding-top: 0;
+
+  /**
+   * Set safe initial values, so mochas .progress does not inherit these
+   * properties from Bootstrap .progress (which causes .progress height to
+   * equal line height set in Bootstrap).
+   */
+  height: auto;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: initial;
+}
+
+#mocha-stats em {
+  color: var(--mocha-stats-em-color);
+}
+
+#mocha-stats a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#mocha-stats a:hover {
+  border-bottom: 1px solid var(--mocha-stats-hover-color);
+}
+
+#mocha-stats li {
+  display: inline-block;
+  margin: 0 5px;
+  list-style: none;
+  padding-top: 11px;
+}
+
+#mocha-stats canvas {
+  width: 40px;
+  height: 40px;
+}
+
+#mocha code .comment { color: var(--mocha-code-comment); }
+#mocha code .init { color: var(--mocha-code-init); }
+#mocha code .string { color: var(--mocha-code-string); }
+#mocha code .keyword { color: var(--mocha-code-keyword); }
+#mocha code .number { color: var(--mocha-code-number); }
+
+@media screen and (max-device-width: 480px) {
+  #mocha {
+    margin: 60px 0px;
+  }
+
+  #mocha #stats {
+    position: absolute;
+  }
+}
+#mocha .test.pass pre {
+    display: none;
+}
+
+#mocha .test.fail pre {
+    display: none;
+}
+
+#mocha .test pre.error {
+    display: block;
+}
+
+#mocha .test .html-error pre.error {
+    box-shadow: none;
+}
+
+#mocha .test:hover h2:after {
+    color: #888888;
+    content: "(view source)";
+    font-family: arial;
+    font-size: 12px;
+    position: relative;
+    right: -10px;
+    top: 0;
+}
+
+#mocha .test.pass.pending h2 {
+    cursor: auto;
+}
+
+#mocha .mocha-header {
+    right: 30px;
+    position: fixed;
+    top: 15px;
+    font-size: 14px;
+    margin: 0;
+    color: #888;
+    z-index: 1;
+}
+
+#mocha .mocha-header em {
+    font-style: normal;
+    color: black;
+}
+
+#mocha .mocha-header ul {
+    display: inline-block;
+}
+
+#mocha .mocha-stats li {
+    display: inline-block;
+    margin: 0 5px;
+    list-style: none;
+    padding-top: 11px;
+}
+
+#mocha .mocha-menu {
+    margin-right: 10px;
+}
+
+#mocha .mocha-menu li {
+    display: inline-block;
+    margin-left: 10px;
+    list-style: none;
+}
+
+#mocha .mocha-menu li span {
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    padding: 3px 7px 2px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+    border-radius: 5px;
+    user-select: none;
+}
+
+#mocha .mocha-menu li span.checked {
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,.2);
+}
+
+#mocha .toggle-passes {
+    background: #b94a48;
+}
+
+        </style>
+    </head>
+    <body>
+        <div id="mocha">
+            <div class="mocha-header">
+                <ul class="mocha-menu">
+                    <li><span id="toggle-passes" class="toggle-passes">show failures only</span></li>
+                </ul>
+                <ul class="mocha-stats">
+                    <li class="passes">passes: <em>15</em></li>
+                    <li class="pending">pending: <em>0</em></li>
+                    <li class="failures">failures: <em>0</em></li>
+                    <li class="duration">duration: <em>2s</em></li>
+                </ul>
+            </div>
+            <ul id="report"><li class="suite"><h1>AuthMiddleware</h1><ul><li class="suite"><h1>protect</h1><ul><li class="test pass fast"><h2>should respond with correct error when no token is provided<span class="duration">3ms</span></h2><pre><code>async () =&#x3E; {
+      const req = { headers: {} };
+      const res = {
+        status: sinon.stub().returnsThis(),
+        json: sinon.stub()
+      };
+      const next = sinon.stub();
+      await authMiddleware.protect(req, res, next);
+      assert(res.status.calledWith(401));
+      assert(res.json.calledWith({ error: &#x27;authorization token required&#x27; }));
+      assert(!next.called);
+    }</code></pre></li><li class="test pass fast"><h2>should respond with correct error when invalid token is provided<span class="duration">6ms</span></h2><pre><code>async () =&#x3E; {
+      const req = { headers: { authorization: &#x27;Bearer invalid_token&#x27; } };
+      const res = {
+        status: sinon.stub().returnsThis(),
+        json: sinon.stub()
+      };
+      const next = sinon.stub();
+      sinon.stub(jwt, &#x27;verify&#x27;).throws(new Error(&#x27;Invalid token&#x27;));
+      await authMiddleware.protect(req, res, next);
+      assert(res.status.calledWith(401));
+      assert(res.json.calledWith({ error: &#x27;request is not authorized&#x27; }));
+      assert(!next.called);
+    }</code></pre></li></ul></li></ul></li><li class="suite"><h1>UserController</h1><ul><li class="suite"><h1>signupUser</h1><ul><li class="test pass fast"><h2>should return status 201 and a token when signup is successful<span class="duration">2ms</span></h2><pre><code>async () =&#x3E; {
+            const req = { body: { email: &#x27;test@example.com&#x27;, password: &#x27;password&#x27; } };
+            const res = {
+                status: sinon.stub().returnsThis(),
+                json: sinon.stub()
+            };
+            const user = { _id: &#x27;someUserId&#x27;, email: &#x27;test@example.com&#x27; };
+            sinon.stub(User, &#x27;signup&#x27;).resolves(user);
+            sinon.stub(jwt, &#x27;sign&#x27;).returns(&#x27;someToken&#x27;);
+            await UserController.signupUser(req, res);
+            sinon.assert.calledWith(res.status, 201);
+            sinon.assert.calledWith(res.json, { email: &#x27;test@example.com&#x27;, token: &#x27;someToken&#x27; });
+            User.signup.restore();
+            jwt.sign.restore();
+        }</code></pre></li><li class="test pass fast"><h2>should return status 400 and an error message when signup fails<span class="duration">1ms</span></h2><pre><code>async () =&#x3E; {
+            const req = { body: { email: &#x27;test@example.com&#x27;, password: &#x27;password&#x27; } };
+            const res = {
+                status: sinon.stub().returnsThis(),
+                json: sinon.stub()
+            };
+            sinon.stub(User, &#x27;signup&#x27;).rejects(new Error(&#x27;Signup failed&#x27;));
+            await UserController.signupUser(req, res);
+            sinon.assert.calledWith(res.status, 400);
+            sinon.assert.calledWith(res.json, { error: &#x27;Signup failed&#x27; });
+            User.signup.restore();
+        }</code></pre></li></ul></li><li class="suite"><h1>loginUser</h1><ul><li class="test pass fast"><h2>should return status 200 and a token when login is successful<span class="duration">2ms</span></h2><pre><code>async () =&#x3E; {
+            const req = { body: { email: &#x27;test@example.com&#x27;, password: &#x27;password&#x27; } };
+            const res = {
+                status: sinon.stub().returnsThis(),
+                json: sinon.stub()
+            };
+            const user = { _id: &#x27;someUserId&#x27;, email: &#x27;test@example.com&#x27; };
+            sinon.stub(User, &#x27;login&#x27;).resolves(user);
+            sinon.stub(jwt, &#x27;sign&#x27;).returns(&#x27;someToken&#x27;);
+            await UserController.loginUser(req, res);
+            sinon.assert.calledWith(res.status, 200);
+            sinon.assert.calledWith(res.json, { email: &#x27;test@example.com&#x27;, token: &#x27;someToken&#x27; });
+            User.login.restore();
+            jwt.sign.restore();
+        }</code></pre></li><li class="test pass fast"><h2>should return status 400 and an error message when login fails<span class="duration">1ms</span></h2><pre><code>async () =&#x3E; {
+            const req = { body: { email: &#x27;test@example.com&#x27;, password: &#x27;password&#x27; } };
+            const res = {
+                status: sinon.stub().returnsThis(),
+                json: sinon.stub()
+            };
+            sinon.stub(User, &#x27;login&#x27;).rejects(new Error(&#x27;Login failed&#x27;));
+            await UserController.loginUser(req, res);
+            sinon.assert.calledWith(res.status, 400);
+            sinon.assert.calledWith(res.json, { error: &#x27;Login failed&#x27; });
+            User.login.restore();
+        }</code></pre></li></ul></li></ul></li><li class="suite"><h1>User API Tests</h1><ul><li class="suite"><h1>signup tests</h1><ul><li class="test pass slow"><h2>should create a new user with valid credentials<span class="duration">176ms</span></h2><pre><code>async () =&#x3E; {
+      const response = await request
+        .post(&#x22;/api/user/signup&#x22;)
+        .send({
+          email: &#x27;test@test.com&#x27;,
+          password: &#x27;TestPassword1!&#x27;
+        })
+        .expect(201);
+      expect(response.body.email).to.equal(&#x27;test@test.com&#x27;);
+      expect(response.body).to.have.property(&#x27;token&#x27;);
+    }</code></pre></li><li class="test pass fast"><h2>should return an error when fields are missing<span class="duration">12ms</span></h2><pre><code>async () =&#x3E; {
+      const response = await request
+        .post(&#x22;/api/user/signup&#x22;)
+        .send({
+          password: &#x27;TestPassword1!&#x27;
+        })
+        .expect(400);
+      expect(response.body.error).to.equal(&#x27;All fields must be filled&#x27;);
+      const response2 = await request
+        .post(&#x22;/api/user/signup&#x22;)
+        .send({
+          email: &#x27;test@test.com&#x27;
+        })
+        .expect(400);
+      expect(response2.body.error).to.equal(&#x27;All fields must be filled&#x27;);
+    }</code></pre></li><li class="test pass medium"><h2>should return an error when the email is already in use<span class="duration">60ms</span></h2><pre><code>async () =&#x3E; {
+      await User.create({
+        email: &#x27;existing@example.com&#x27;,
+        password: &#x27;testPassword&#x27;
+      });
+      const response = await request
+        .post(&#x22;/api/user/signup&#x22;)
+        .send({
+          email: &#x27;existing@example.com&#x27;,
+          password: &#x27;testPassword&#x27;
+        })
+        .expect(400);
+      expect(response.body.error).to.equal(&#x27;Email already in use&#x27;);
+    }</code></pre></li></ul></li><li class="suite"><h1>login tests</h1><ul><li class="test pass slow"><h2>should log in a user with valid credentials<span class="duration">97ms</span></h2><pre><code>async () =&#x3E; {
+      const response = await request
+        .post(&#x22;/api/user/login&#x22;)
+        .send({
+          email: &#x27;logintest@test.com&#x27;,
+          password: &#x27;TestPassword1!&#x27;
+        })
+        .expect(200);
+      expect(response.body).to.have.property(&#x27;token&#x27;);
+      expect(response.body.email).to.equal(&#x27;logintest@test.com&#x27;);
+    }</code></pre></li><li class="test pass fast"><h2>should return an error when fields are missing<span class="duration">11ms</span></h2><pre><code>async () =&#x3E; {
+      const response = await request
+        .post(&#x22;/api/user/login&#x22;)
+        .send({
+          password: &#x27;TestPassword1!&#x27;
+        })
+        .expect(400);
+      expect(response.body.error).to.equal(&#x27;All fields must be filled&#x27;);
+      const response2 = await request
+        .post(&#x22;/api/user/login&#x22;)
+        .send({
+          email: &#x27;test@example.com&#x27;
+        })
+        .expect(400);
+      expect(response2.body.error).to.equal(&#x27;All fields must be filled&#x27;);
+    }</code></pre></li><li class="test pass fast"><h2>should return an error when the email is incorrect<span class="duration">30ms</span></h2><pre><code>async () =&#x3E; {
+      const response = await request
+        .post(&#x27;/api/user/login&#x27;)
+        .send({
+          email: &#x27;notanemailaddress.fi&#x27;,
+          password: &#x27;TestPassword1!&#x27;
+        })
+        .expect(400);
+      expect(response.body.error).to.equal(&#x27;Incorrect email&#x27;);
+    }</code></pre></li><li class="test pass slow"><h2>should return an error when the password is incorrect<span class="duration">89ms</span></h2><pre><code>async () =&#x3E; {
+      const response = await request
+        .post(&#x27;/api/user/login&#x27;)
+        .send({
+          email: &#x27;logintest@test.com&#x27;,
+          password: &#x27;incorrectPassword&#x27;
+        })
+        .expect(400);
+      expect(response.body.error).to.equal(&#x27;Incorrect password&#x27;);
+    }</code></pre></li></ul></li><li class="suite"><h1>quizScores tests</h1><ul><li class="test pass medium"><h2>should add quiz scores to the user<span class="duration">62ms</span></h2><pre><code>async () =&#x3E; {
+      const newUser = await User.create(testUser);
+      const fetchedUser = await User.findOne({ email: testUser.email });
+      expect(fetchedUser.quizScores).to.have.length(testUser.quizScores.length);
+      testUser.quizScores.forEach((expectedScore, index) =&#x3E; {
+        const fetchedScore = fetchedUser.quizScores[index];
+        expect(fetchedScore.score).to.equal(expectedScore.score);
+        expect(fetchedScore.quizId).to.equal(expectedScore.quizId);
+        expect(fetchedScore.quizName).to.equal(expectedScore.quizName);
+      });
+    }</code></pre></li></ul></li><li class="suite"><h1>openedLessons tests</h1><ul><li class="test pass medium"><h2>should add opened lessons to the user<span class="duration">58ms</span></h2><pre><code>async () =&#x3E; {
+      const newUser = await User.create(testUser);
+      const fetchedUser = await User.findOne({ email: testUser.email });
+      expect(fetchedUser.openedLessons).to.have.length(testUser.openedLessons.length);
+      testUser.openedLessons.forEach((expectedLesson, index) =&#x3E; {
+        const fetchedLesson = fetchedUser.openedLessons[index];
+        expect(fetchedLesson.lessonNr).to.equal(expectedLesson.lessonNr);
+        expect(fetchedLesson.title).to.equal(expectedLesson.title);
+        expect(fetchedLesson.path).to.equal(expectedLesson.path);
+      });
+    }</code></pre></li></ul></li></ul></li></ul>
+        </div>
+        <script>
+        function hideSuitesWithout(className) {
+    var suites = document.querySelectorAll('#report > .suite');
+
+    for (var i = 0; i < suites.length; i++) {
+        let suite = suites[i];
+
+        var els = suite.getElementsByClassName(className);
+        if (!els.length) {
+            suite.classList.add('hidden');
+        }
+    }
+}
+
+function unhide() {
+    var suites = document.getElementsByClassName('suite hidden');
+
+    while (suites.length) {
+        suites[0].classList.remove('hidden');
+    }
+}
+
+function togglePasses() {
+    var report = document.getElementById('report');
+
+    report.classList.toggle('hide-passes');
+
+    if (report.classList.contains('hide-passes')) {
+        hideSuitesWithout('test fail');
+    } else {
+        unhide();
+    }
+}
+
+document.getElementById('toggle-passes').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    this.classList.toggle('checked');
+
+    togglePasses();
+});
+
+var tests = document.getElementsByClassName('test');
+
+for (var i = 0; i < tests.length; i++) {
+    var elem = tests[i];
+    var head = elem.children[0];
+
+    head.onclick = function () {
+        var code = this.parentElement.children[1];
+        var display = code.style.display;
+
+        if (display && display === 'block') {
+            code.style.display = 'none';
+        } else {
+            code.style.display = 'block';
+        }
+    };
+}
+        </script>
+    </body>
+</html>
