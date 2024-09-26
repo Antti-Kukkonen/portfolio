@@ -48,9 +48,9 @@ My final group project which I worked on during my studies. Another React applic
 
 These are smaller projects and bits of code that demonstrate my coding style and the technologies I've worked with.
 
-**[Java CRUD application](https://github.com/Arc4517/portfolio/tree/main/Java-CRUD)** - A simple interface for MongoDB with CRUD operations made with JavaFX.
-**[Design patterns](https://github.com/Arc4517/portfolio/tree/main/design-patterns)** - A collection of design patterns implemented in Java.
-**[ParliamentApp](https://github.com/Arc4517/portfolio/tree/main/ParliamentApp)** - An android application that fetches images from an API and displays basic information about the Finnish parliament members.
+**[Java CRUD application](https://github.com/Arc4517/portfolio/tree/main/Java-CRUD)** - A simple interface for MongoDB with CRUD operations made with JavaFX.\
+**[Design patterns](https://github.com/Arc4517/portfolio/tree/main/design-patterns)** - A collection of design patterns implemented in Java.\
+**[ParliamentApp](https://github.com/Arc4517/portfolio/tree/main/ParliamentApp)** - An android application that fetches images from an API and displays basic information about the Finnish parliament members.\
 
 ### node.js server examples: Custom API backends made with Express
 
