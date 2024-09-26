@@ -1,0 +1,16 @@
+idea
+.env
+out/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Windows
+Thumbs.db
