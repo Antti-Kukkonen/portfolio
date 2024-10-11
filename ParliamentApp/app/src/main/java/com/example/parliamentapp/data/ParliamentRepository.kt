@@ -1,73 +1,111 @@
 package com.example.parliamentapp.data
 
-class ParliamentRepository {
-    private val parliamentMembers = ParliamentMembersData.members
+import android.content.Context
+import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import com.example.parliamentapp.data.database.ParliamentMemberDao
+import com.example.parliamentapp.model.ParliamentMember
+import com.example.parliamentapp.model.ParliamentMemberExtra
+import com.example.parliamentapp.model.ParliamentMemberNote
+import com.example.parliamentapp.network.FetchWorker
+import com.example.parliamentapp.network.ParliamentApiService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.withContext
+import java.util.concurrent.TimeUnit
 
-    fun getRandomParliamentMember(): ParliamentMember {
-        return parliamentMembers.random()
+/**
+ * 2024/10/11, Antti Kukkonen, 2215598
+ *
+ * ParliamentRepository is an interface that defines the methods for fetching parliament members,
+ * parliament member extras and parliament member notes.
+ * DefaultParliamentRepository is a class that implements the ParliamentRepository interface.
+ * DefaultParliamentRepository uses a work manager to schedule a worker that fetches data
+ * from the network to keep the local database up to date.
+ */
+interface ParliamentRepository {
+    suspend fun getParliamentMembers(): Flow<List<ParliamentMember>>
+    suspend fun getParliamentMemberExtra(): Flow<List<ParliamentMemberExtra>>
+    suspend fun getParliamentMemberNotes(): Flow<List<ParliamentMemberNote>>
+    suspend fun insertNote(note: ParliamentMemberNote)
+    suspend fun deleteNote(hetekaId: Int)
+}
+
+class DefaultParliamentRepository(
+    private val parliamentApiService: ParliamentApiService,
+    private val parliamentMemberDao: ParliamentMemberDao,
+    context: Context
+) : ParliamentRepository {
+
+    private val workManager = WorkManager.getInstance(context)
+
+    private fun scheduleFetchWorker() {
+        val fetchRequest = PeriodicWorkRequestBuilder<FetchWorker>(15, TimeUnit.MINUTES)
+            .setConstraints(
+                Constraints.Builder()
+                    .setRequiredNetworkType(androidx.work.NetworkType.CONNECTED)
+                    .build()
+            )
+            .build()
+        workManager.enqueueUniquePeriodicWork(
+            "FetchWorker",
+            ExistingPeriodicWorkPolicy.KEEP,
+            fetchRequest
+        )
     }
 
-    fun parties(): List<String> {
-        return parliamentMembers
-            .map { it.party }
-            .distinct()
-            .sorted()
+    init {
+        scheduleFetchWorker()
     }
 
-    fun partiesBySize(): List<String> {
-        return parliamentMembers
-            .groupBy { it.party }
-            .map { it.key to it.value.size }
-            .sortedByDescending { it.second }
-            .map { it.first }
-    }
-
-    fun partyMembers(party: String): List<ParliamentMember> {
-        return parliamentMembers
-            .filter { it.party == party }
-            .sortedWith(compareBy({ it.lastname }, { it.firstname }))
-    }
-
-    fun governmentParties(): Set<String> {
-        return parliamentMembers
-            .filter { it.minister }
-            .map { it.party }
-            .toSet()
-    }
-
-    fun governmentPartiesFromLargestPartyToSmallest(): List<String> {
-        return parliamentMembers
-            .asSequence()
-            .filter { it.minister }
-            .groupBy { it.party }
-            .map { it.key to it.value.size }
-            .sortedByDescending { it.second }
-            .map { it.first }
-            .toList()
-    }
-
-    fun governmentSeats(): Int {
-        return parliamentMembers
-            .map { it.party }
-            .filter { governmentParties().contains(it) }
-            .size
-    }
-
-    fun seats(partyNames: Set<String>): Int {
-        return parliamentMembers
-            .filter { partyNames.contains(it.party) }
-            .size
-    }
-
-    // form all possible governments from the parties in the parliament
-    // filter out the governments that have less than 101 seats
-    // return the set of parties in the governments
-    fun governments(partyNames: Set<String>): Set<Set<String>> {
-        return partyNames
-            .fold(setOf(setOf())) { subsets: Set<Set<String>>, element: String ->
-                subsets + subsets.map { it + element }
+    override suspend fun getParliamentMembers(): Flow<List<ParliamentMember>> {
+        // Use local db if available, otherwise populate db from network and use it
+        return flow {
+            withContext(Dispatchers.IO) {
+                val databaseData = parliamentMemberDao.getParliamentMembers().firstOrNull()
+                if (databaseData.isNullOrEmpty()) {
+                    val networkData = parliamentApiService.getParliamentMembers()
+                    parliamentMemberDao.insertAllMembers(networkData)
+                }
             }
-            .filter { seats(it) >= 101 }
-            .toSet()
+            emitAll(parliamentMemberDao.getParliamentMembers())
+        }
+    }
+
+    override suspend fun getParliamentMemberExtra(): Flow<List<ParliamentMemberExtra>> {
+        // Use local db if available, otherwise populate db from network and use it
+        return flow {
+            withContext(Dispatchers.IO) {
+                val databaseData =
+                    parliamentMemberDao.getParliamentMemberExtras().firstOrNull()
+                if (databaseData.isNullOrEmpty()) {
+                    val networkData = parliamentApiService.getParliamentMemberExtras()
+                    parliamentMemberDao.insertAllExtras(networkData)
+                }
+            }
+            emitAll(parliamentMemberDao.getParliamentMemberExtras())
+        }
+    }
+
+
+    override suspend fun getParliamentMemberNotes(): Flow<List<ParliamentMemberNote>> {
+        return parliamentMemberDao.getParliamentMemberNotes()
+    }
+
+    override suspend fun insertNote(note: ParliamentMemberNote) {
+        withContext(Dispatchers.IO) {
+            parliamentMemberDao.insert(note)
+        }
+    }
+
+    override suspend fun deleteNote(hetekaId: Int) {
+        withContext(Dispatchers.IO) {
+            parliamentMemberDao.deleteNote(hetekaId)
+        }
     }
 }
